@@ -15,32 +15,32 @@
     <script>
     function myFunction() {
         var userid; //userid var
-		var pass; //pass var
+	var pass; //pass var
         userid = document.getElementById("textuserid").value; //get userid value for regex
-		pass = document.getElementById("textpass").value;
-            var reg = /^[a-zA-Z][a-zA-Z][0-9]$/; //regex match for userid
-	    var preg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-            if (reg.test(textuserid.value) == false)
-            {
-            document.getElementById("demo").style.color = "red"; //bad user!
-                document.getElementById("demo").innerHTML ="Invalid user";
-                alert('Invalid user');
-                return false;
-            } else {
-				if (preg.test(textpass.value) == false){ 
-					document.getElementById("demo2").style.color = "red"; //bad password, do you even nist bro?
-					document.getElementById("demo2").innerHTML ="Invalid password syntax";
-					alert('Invalid password');
-					return false;
-			} 
-			else{
+	pass = document.getElementById("textpass").value;
+        var reg = /^[a-zA-Z][a-zA-Z][0-9]$/; //regex match for userid
+	var preg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        if (reg.test(textuserid.value) == false)
+        {
+         document.getElementById("demo").style.color = "red"; //bad user!
+         document.getElementById("demo").innerHTML ="Invalid user";
+         alert('Invalid user');
+         return false;
+        } 
+	 else   {
+		if (preg.test(textpass.value) == false){ 
+		document.getElementById("demo2").style.color = "red"; //bad password, do you even nist bro?
+		document.getElementById("demo2").innerHTML ="Invalid password syntax";
+		alert('Invalid password');
+		return false;
+		} 
+		 else  {
             alert('Thank you for logging in, redirecting to page');
-			window.location.replace("http://stackoverflow.com");
-            }
-		}
+			window.location.replace("http://stackoverflow.com"); //replace because it doesnt leave history
+            		}
+	}
        return true;
-    }
+    	}
     </script>
-
     </body>
     </html> 
