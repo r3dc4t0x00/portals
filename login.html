@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+    <html>
+    <body>
+
+    <h2>JavaScript Email Validation</h2>
+
+    <input id="textuserid">
+	<p id="demo" style="color: red;"></p>
+    <input id="textpass" type="password">
+	<p id="demo2" style="color: red;"></p>
+    <button type="button" onclick="myFunction()">Submit</button>
+
+
+
+    <script>
+    function myFunction() {
+        var userid; //userid var
+		var pass; //pass var
+        userid = document.getElementById("textuserid").value; //get userid value for regex
+		pass = document.getElementById("textpass").value;
+            var reg = /^[a-zA-Z][0-9][a-zA-Z][a-zA-Z][a-zA-Z][0-9][0-9]$/; //regex match
+			var preg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            if (reg.test(textuserid.value) == false)
+            {
+            document.getElementById("demo").style.color = "red"; //bad user!
+                document.getElementById("demo").innerHTML ="Invalid user";
+                alert('Invalid user');
+                return false;
+            } else {
+				if (preg.test(textpass.value) == false){ 
+					document.getElementById("demo2").style.color = "red"; //bad password, do you even nist bro?
+					document.getElementById("demo2").innerHTML ="Invalid password syntax";
+					alert('Invalid password');
+					return false;
+			} 
+			else{
+            alert('Thank you for logging in, redirecting to page');
+			window.location.replace("http://stackoverflow.com");
+            }
+		}
+       return true;
+    }
+    </script>
+
+    </body>
+    </html> 
